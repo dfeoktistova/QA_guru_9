@@ -52,7 +52,8 @@ class RegistrationPage:
         browser.element(by.text(value)).click()
 
     def upload_picture(self, picture):
-        self.picture.set_value(os.path.abspath(f'../test/{picture}'))
+        path = os.path.dirname(os.path.abspath(__file__))
+        self.picture.set_value(os.path.abspath(f'{path}/../resources/{picture}'))
 
     def fill_address(self, value):
         self.address.click().type(value)
