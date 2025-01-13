@@ -43,7 +43,8 @@ class RegistrationPage:
 
         browser.element(by.text(user.hobbies.value)).click()
 
-        self.picture.set_value(os.path.abspath(f'../test/{user.picture}'))
+        path = os.path.dirname(os.path.abspath(__file__))
+        self.picture.set_value(os.path.abspath(f'{path}/../../resources/{user.picture}'))
 
         self.address.click().type(user.address)
 
